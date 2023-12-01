@@ -40,14 +40,14 @@ const axios = require('axios');
                     }
 
                     if (fileYear == year) {
-                        if (month == 12) {
-                            const date1 = new Date(`${fileYear}-${month}-${day}`);
-                            const Difference_In_Time = today.getTime() - date1.getTime();
-                            if (Difference_In_Time < 0) {
-                                continue;
-                            }
+                        if (month !== 12) {
+                            continue;
                         }
-                        continue;
+                        const date1 = new Date(`${fileYear}-${month}-${day}`);
+                        const Difference_In_Time = today.getTime() - date1.getTime();
+                        if (Difference_In_Time < 0) {
+                            continue;
+                        }
                     }
 
                     if (!fs.existsSync(`./${fileYear}/day${day}/input.txt`)) {
