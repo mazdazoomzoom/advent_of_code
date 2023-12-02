@@ -27,16 +27,12 @@ const axios = require('axios');
                         fs.mkdirSync(`./${fileYear}/day${day}`);
                     }
 
-                    if (!fs.existsSync(`./${fileYear}/day${day}/NodeJS`)) {
-                        fs.mkdirSync(`./${fileYear}/day${day}/NodeJS`);
+                    if (!fs.existsSync(`./${fileYear}/day${day}/solution.js`)) {
+                        fs.writeFileSync(`./${fileYear}/day${day}/NodeJS/solution.js`, fs.readFileSync('./nodejs-template.js', 'utf8'));
                     }
 
-                    if (!fs.existsSync(`./${fileYear}/day${day}/NodeJS/index.js`)) {
-                        fs.writeFileSync(`./${fileYear}/day${day}/NodeJS/index.js`, fs.readFileSync('./index-template.js', 'utf8'));
-                    }
-
-                    if (!fs.existsSync(`./${fileYear}/day${day}/Go`)) {
-                        fs.mkdirSync(`./${fileYear}/day${day}/Go`);
+                    if (!fs.existsSync(`./${fileYear}/day${day}/solution.go`)) {
+                        fs.writeFileSync(`./${fileYear}/day${day}/Go/solution.go`, fs.readFileSync('./go-template.go', 'utf8'));
                     }
 
                     if (fileYear == year) {
