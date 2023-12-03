@@ -17,7 +17,7 @@ const part2 = (lines) => {
 };
 
 const main = () => {
-    const fileContents = fs.readFileSync('../input.txt', 'utf8');
+    const fileContents = fs.readFileSync('./input.txt', 'utf8');
     const lines = fileContents.split('\n');
 
     part1Solution = part1(lines);
